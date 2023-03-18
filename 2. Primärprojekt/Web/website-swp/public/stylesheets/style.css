@@ -1,0 +1,135 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 18vh;
+    background-image: url("/images/bgImage.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4vw;
+    z-index: 2;
+}
+
+.header-title {
+    word-break: break-word;
+    text-align: center;
+    color: white;
+    font-size: 4vh;
+}
+
+.header-subtitle {
+    text-align: center;
+    color: white;
+    font-size: 2vh;
+}
+
+.content {
+    margin-top: 18vh;
+    min-height: calc(70vh - 150px);
+}
+
+.checkbox {
+    margin-right: 20px;
+}
+
+form {
+    border-color: rgb(33, 37, 41);
+    border-radius: 4px;
+}
+
+label {
+    color: #495057;
+}
+
+.btn {
+    background-color: rgb(52, 89, 113) !important;
+}
+
+footer {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #e9ecef;
+    margin-top: 50px;
+}
+
+.img-small {
+    width: 160px;
+    object-fit: contain;
+}
+
+img {
+    max-height: 400px;
+    max-width: 500px;
+}
+
+.warning {
+    background-color: #fffeda;
+    border-radius: 5px;
+}
+
+.info {
+    background-color: #dae9ff;
+    border-radius: 5px;
+}
+
+.sidebtn {
+    float: right;
+    margin-right: 10px;
+}
+
+#overlay {
+    z-index: 999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffd2;
+}
+
+.loadingcontainer {
+    position: fixed;
+    width: 250px;
+    height: 200px;
+    left: calc(50vw - 125px);
+    top: calc(50vh - 100px);
+    background-color: rgb(26, 25, 26);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.loadingcontainer img {
+    width: 150px;
+    height: 150px;
+}
+
+.loadingcontainer p {
+    color: white;
+    font-size: 20px;
+}
+
+.settingsicon {
+    width: 60px;
+    height: 60px;
+    margin-left: calc(50% - 30px);
+}
+
+.hidden {
+    visibility: hidden;
+}

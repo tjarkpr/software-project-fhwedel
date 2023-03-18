@@ -1,0 +1,47 @@
+<div class="results mt-5">
+    <h2>Ergebnisse</h2>
+
+    <div class="row justify-content-center mb-5 align-items-center">
+        <figure class="figure m-4">
+            <img src="{{userInput}}" class="figure-img img-fluid "
+                 alt="A generic square placeholder image with rounded corners in a figure.">
+            <figcaption class="figure-caption">Eingabebild</figcaption>
+        </figure>
+
+        <figure class="figure m-4">
+            <img src="{{userReference}}" class="figure-img img-fluid "
+                 alt="A generic square placeholder image with rounded corners in a figure.">
+            <figcaption class="figure-caption">Referenzbild</figcaption>
+        </figure>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                {{#each methods}}
+                    <th scope="col">{{this}}</th>
+                {{/each}}
+            </tr>
+            </thead>
+            <tbody>
+                {{#each datasets}}
+                    <tr>
+                        <th scope="row">{{this}}</th>
+                        {{#each ../methods}}
+                            <td>{{#with (lookup (lookup ../../data this) ../this)}}
+                                <div>
+                                    <img class="img-fluid outputImg" src="{{img}}">
+                                    <p class="mb-0"> {{> time_icon}} {{runtime}} sec.</p>
+                                    <p class="mb-0"> {{> frobenius_icon}} {{norm}}</p>
+                                </div>
+                            {{/with}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <a href="/restart" class="btn btn-info btn-block my-4 mt-5">Neu Starten</a>
+</div>

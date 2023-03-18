@@ -1,0 +1,90 @@
+<div id="overlay" >
+    <div class="loadingcontainer">
+        <img src="/images/loading.gif">
+        <p>RECHENVORGANG</p>
+    </div>
+</div>
+<div class="border p-3 mb-4 warning">
+    <p class="h5">Wichtige Informationen</p>
+    <p>Die Modelle wurden mit Bildern der Größe <i>40x49</i> trainiert. Die vom Benutzer hochgeladenen Bilder werden automatisch in diese Größe gebracht. Für den Erhalt aller Bildinformationen können wir bei Bildern anderer Größen nicht garantieren.</p>
+</div>
+<form id="inputform" class="border p-5 mb-4" method="post" action="/getResults" onsubmit="addOverlay()" enctype="multipart/form-data" autocomplete="off">
+    <img class="settingsicon" src="/images/settings.svg">
+    <p class="h3 mb-4 text-center">Einstellungen</p>
+    <div class="form-group">
+        <label class="control-label">Eingabebild</label>
+        <div class="input-group mb-4">
+            <div class="custom-file">
+                <input id="inputImg" type="file" class="custom-file-input" name="inputImg" aria-describedby="inputImg"
+                       accept="image/png,image/jpeg" required>
+                <label id="inputImgLabel" class="custom-file-label" for="inputImg"></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label d-block">Referenzbild (optional)</label>
+        <div class="input-group mb-4">
+            <div class="custom-file">
+                <input id="referenceImg" type="file" class="custom-file-input" name="referenceImg"
+                       aria-describedby="referenceImg" accept="image/png,image/jpeg">
+                <label id="referenceImgLabel" class="custom-file-label" for="referenceImg"></label>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-info sidebtn" type="button" onclick="selectAll('.methods', true)">ALL</button>
+    <button class="btn btn-info sidebtn" type="button" onclick="selectAll('.methods', false)">RESET</button>
+    <div class="form-group">
+        <label class="control-label col-sm-4 pl-0">Methoden</label>
+        <div class="controls pl-0 d-flex flex-column flex-sm-row">
+            <div class="checkbox">
+                <input type="checkbox" name="method_nn" class="methods" id="method_nn" value="nn" required>
+                <label for="methods_0">NN</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="method_cnn" class="methods" id="method_cnn" value="cnn" required>
+                <label for="methods_1">CNN</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="method_krr" class="methods" id="method_krr" value="krr" required>
+                <label for="methods_2">KRR</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="method_gan" class="methods" id="method_gan" value="gan" required>
+                <label for="methods_3">GAN</label>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-info sidebtn" type="button" onclick="selectAll('.dataset', true)">ALL</button>
+    <button class="btn btn-info sidebtn" type="button" onclick="selectAll('.dataset', false)">RESET</button>
+    <div class="form-group">
+        <label class="control-label col-sm-4 pl-0">Anzahl der Trainingsdaten</label>
+        <div class="controls pl-0 d-flex flex-column flex-sm-row">
+            <div class="checkbox">
+                <input type="checkbox" name="dataset_s" class="dataset" id="dataset_s" value="1000" required>
+                <label for="dataset_0">1.000</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="dataset_m" class="dataset" id="dataset_m" value="10000" required>
+                <label for="dataset_1">10.000</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="dataset_l" class="dataset" id="dataset_l" value="100000" required>
+                <label for="dataset_2">100.000</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="dataset_xl" class="dataset" id="dataset_xl" value="200000" required>
+                <label for="dataset_3">200.000</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="dataset_best" class="dataset" id="dataset_best" value="best" required>
+                <label for="dataset_4">BEST</label>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-info btn-block my-1" type="submit">Start</button>
+</form>
+<div class="border p-3 info">
+    <p class="h5">Weitere Informationen zum Softwareprojekt</p>
+    <p>Das Softwareprojekt an der FH Wedel im Wintersemester 2020/2021 drehte sich um die Bilderweiterung von Bildern der Größe <i>40x49</i>, sodass das Bild und sein erweiterter Rahmen komplett von verschiedenen Methoden des maschinellen Lernens vorhergesagt werden. Diese Web-Anwendung lässt den Benutzer ein Bild hochladen, um die trainierten Modelle mit verschiedenen Parametern zu testen.</p>
+</div>
